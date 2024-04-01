@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <title>Document</title>
+  <style>
+    .input {
+      display: flex;
+      gap: 30px;
+    }
+    .buttons, .contents, .positions {
+      display:flex;
+      flex-direction:column;
+      gap: 5px;
+    }
+    .content2 {
+      margin-top: auto;
+    }
+    li:hover {
+      background-color: yellow;
+    }
+    li:left {
+      background-color: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="input">
+      <div class="buttons">
+        <button type="button" onclick="add()">Add Node</button>
+        <button type="button" onclick="remove()">Remove Node</button>
+        <button type="button" onclick="modify()">Modify Node</button>
+      </div>
+      <div class="contents">
+        <div class="content">
+          <label for="content">Content</label>
+          <input type="text" name="content" id="content">
+        </div>
+        <div class="content2">
+          <label for="newContent">New Content</label>
+          <input type="text" name="newContent" id="newContent">
+        </div>
+      </div>
+      <div class="positions">
+        <div class="position">
+          <label for="position">Position</label>
+          <input type="text" name="position" id="position1">
+        </div>
+        <div class="position">
+          <label for="position">Position</label>
+          <input type="text" name="position" id="position2">
+        </div>
+        <div class="position">
+          <label for="position">Position</label>
+          <input type="text" name="position" id="position3">
+        </div>
+      </div>
+    </div>
+    <div class="result">
+      <h1>Web Node</h1>
+      <ul>
+        <li>Database</li>
+        <li>Web 1</li>
+        <li>Web 2</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    for (let i = 0; i < document.querySelectorAll("li").length; i++) {
+        const li = document.querySelectorAll("li")[i];
+        li.addEventListener("mouseover", function () {
+          this.style.backgroundColor = "yellow";
+        })
+        li.addEventListener("mouseleave", function () {
+          this.style.backgroundColor = "white";
+        })
+        li.addEventListener("click", function () {
+          var content = document.getElementById("content");
+          content.value = li.textContent;
+          
+        })
+      }
+    
+    function add() {
+      var position1 = document.getElementById("position1").value;
+      var position2 = document.getElementById("position2").value;
+      var position3 = document.getElementById("position3").value;
+      var li1 = document.createElement("li");
+      var li2 = document.createElement("li");
+      var li3 = document.createElement("li");
+     
+      li1.innerHTML = position1;
+      li2.innerHTML = position2;
+      li3.innerHTML = position3;
+
+      
+
+      var list = document.querySelector("ul");
+
+      if (position1 !== "") {
+        list.appendChild(li3);
+        document.getElementById("position1").value = "";
+      }
+      if (position2 !== "") {
+        list.insertBefore(li2, list.children[1]);
+        document.getElementById("position2").value = "";
+      }
+      if (position3 !== "") {
+        list.insertBefore(li1, list.children[0]);
+        document.getElementById("position3").value = "";
+      }
+      
+      for (let i = 0; i < document.querySelectorAll("li").length; i++) {
+        const li = document.querySelectorAll("li")[i];
+        li.addEventListener("mouseover", function () {
+          this.style.backgroundColor = "yellow";
+        })
+        li.addEventListener("mouseleave", function () {
+          this.style.backgroundColor = "white";
+        })
+        li.addEventListener("click", function () {
+          var content = document.getElementById("content");
+          content.value = li.textContent;
+          
+        })
+      }
+    }
+    
+    function modify() {
+      var content = document.getElementById("content").value;
+      var newContent = document.getElementById("newContent").value;
+      var list = document.querySelector("ul");
+      var newLi= document.createElement("li");
+      newLi.innerHTML = newContent;
+
+      for (let I = 0; I < document.querySelectorAll("li").length; I++) {
+        const li = document.querySelectorAll("li")[I];
+        if (li.textContent === content) {
+          li.textContent = newContent;
+          break;
+        }
+      }
+      document.getElementById("content").value = "";
+      document.getElementById("newContent").value = "";
+    }
+    function remove() {
+      var content = document.getElementById("content").value;
+      var newContent = document.getElementById("newContent").value;
+      var list = document.querySelector("ul");
+      var newLi= document.createElement("li");
+      newLi.innerHTML = newContent;
+
+      for (let I = 0; I < document.querySelectorAll("li").length; I++) {
+        const li = document.querySelectorAll("li")[I];
+        if (li.textContent === content) {
+          li.remove();
+          break;
+        }
+      }
+      document.getElementById("content").value = "";
+      document.getElementById("newContent").value = "";
+    }
+  </script>
+</body>
+</html>

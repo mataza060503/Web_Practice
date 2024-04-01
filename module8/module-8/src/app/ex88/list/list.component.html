@@ -1,0 +1,24 @@
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Unit Price</th>
+      <th>Picture</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let product of products">
+    <tr>
+      <td> {{product.ProductId}} </td>
+      <td> {{product.ProductName}} </td>
+      <td> {{product.Price}} </td>
+      <td>
+        <img src={{product.Image}} alt="">
+      </td>
+      <td style="cursor: pointer;width: 100px;text-align: center;" (click)="viewDetail(product)">Detail</td>
+    </tr>
+  </tbody>
+</table>

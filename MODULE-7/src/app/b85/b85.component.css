@@ -1,0 +1,15 @@
+th {
+  color: blue;
+  font-size: 20px;
+}
+select {
+  margin-right: 20px;
+}
+table, th, td, tr {
+  border: solid, 1px, black;
+  border-collapse: collapse;
+}
+td {
+  width: 50%;
+  
+}

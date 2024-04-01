@@ -1,0 +1,16 @@
+<button (click)="onClick($event)">Click Me</button>
+Name:
+<input type="text" #myName>
+<button (click)="onSubmit(myName.value)" >Submit</button>
+<br>
+<label for="a">Number a</label>
+<input type="number" name="a" #a>
+<label for="b">Number b</label>
+<input type="number" name="b" #b>
+<button (click)="btnPlus(a.value,b.value)">Plus</button>
+<button (click)="btnSubtract(a.value,b.value)">Subtract</button>
+<button (click)="btnMultiply(a.value,b.value)">Multiply</button>
+<button (click)="btnDevide(a.value,b.value)">Devide</button>
+<button (click)="btnReset(a,b)">Reset</button>
+
+

@@ -1,0 +1,44 @@
+table, th, td {
+  text-align: center;
+}
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.popup-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.popup-background {
+  background-color: black;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+}
+.create-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  padding: 20px;
+  border: solid 1px aqua;
+  border-radius: 20px;
+  
+}
+.create-popup form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.popup-input {
+  display: flex;
+  flex-direction: column;
+}
+img {
+  width: 48px;
+}

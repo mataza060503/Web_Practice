@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">Online Classifields Search Form</h1>
+    <hr>
+    <form action="ex49.html" method="get">
+      <label class="title" for="sections">1) Search for a classifield in the following sections</label>
+      <div class="sections2">
+        <div class="section">
+          <input type="radio" name="section" id="sec1" value="Employment">
+          <label for="sec1">Employment</label>
+        </div>
+        <div class="section">
+          <input type="radio" name="section" id="sec2"
+          value="Personal">
+          <label for="sec2">Personal</label>
+        </div>
+        <div class="section">
+          <input type="radio" name="section" id="sec3"
+          value="ForSale">
+          <label for="sec3">ForSale</label>
+        </div>
+        <div class="section">
+          <input type="radio" name="section" id="sec4"
+          value="Miscellanecus">
+          <label for="sec4">Miscellanecus</label>
+        </div>
+        <div class="section">
+          <input type="radio" name="section" id="sec5"
+          value="Housing">
+          <label for="sec5">Housing</label>
+        </div>
+        <div class="section">
+          <input type="radio" name="section" id="sec6"
+          value="All">
+          <label for="sec6">All of the above</label>
+        </div>
+      </div>
+      <label class="title" for="">2) Search the following publications</label>
+      <div class="sections">
+        <div class="section">
+          <input type="checkbox" name="publications" id="P1" value="MidwestTimes">
+          <label for="P1">Midwest times</label>
+        </div>
+        <div class="section">
+          <input type="checkbox" name="publications" id="P2" value="ModernNews">
+          <label for="P2">Modern News</label>
+        </div>
+        <div class="section">
+          <input type="checkbox" name="publications" id="P3" value="EmploymentToday">
+          <label for="P3">Employment Today</label>
+        </div>
+        <div class="section">
+          <input type="checkbox" name="publications" id="P4" value="GreatLakesClassifields">
+          <label for="P4">Great Lakes Classifields</label>
+        </div>
+        <div class="section">
+          <input type="checkbox" name="publications" id="P5" value="MiddletonDaily">
+          <label for="P5">Middleton Daily</label>
+        </div>
+        <div class="section">
+          <input type="checkbox" name="publications" id="P6" value="CashtownDailyNews">
+          <label for="P6">Cashtown Daily News</label>
+        </div>
+      </div>
+      <div class="line">
+        <label for="FromDate" class="title">3) From to</label>
+        <input type="date" name="FromDate" id="FromDate">
+        <label for="ToDate">to</label>
+        <input type="date" name="ToDate" id="ToDate">
+      </div>
+      <label for="keywords" class="title">4) Enter a few keywords to describe the classified</label>
+      <input type="text" name="keywords" id="keywords">
+      <label for="" class="title">5)Click one of  the options below</label>
+      <div class="buttons">
+        <button id="submit" type="submit">
+          <img src="Search.gif" alt="">
+        </button>
+        <a href="https://support.google.com/">
+          <img src="Help.gif" alt="">
+        </a>
+        <button type="reset">
+          <img src="Cancel.gif" alt="">
+        </button>
+      </div>
+    </form>
+  </div>
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+body {
+  margin: 0px;
+  background-color: #99CCFF;
+}
+.container {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+form {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  margin: 0px 50px;
+}
+hr {
+  border: solid 1px #757575;
+}
+label {
+  margin: 0px 5px;
+}
+.line {
+  display: flex;
+  margin: 5px 0px;
+}
+.line_title {
+  width: 200px;
+}
+#FirstName, #LastName {
+  width: 130px;
+}
+#Address1, #Address2 {
+  width: 200px;
+}
+#State {
+  width: 30px;
+}
+#Zip {
+  width: 70px;
+}
+.used_options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 10px;
+  width: 65%;
+}
+.used_option {
+  margin-right: auto;
+}
+textarea {
+  width: 64%;
+  resize: none;
+}
+

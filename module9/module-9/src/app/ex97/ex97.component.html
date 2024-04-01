@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>My AngularJS App</title>
+    <!-- Add Google Fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!-- Your other meta tags, stylesheets, and scripts go here -->
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1>Đăng kí khóa học</h1>
+      <div class="col">
+        <label for="name">Tên:</label>
+        <input type="text" name="name" [(ngModel)]="name" class={{nameInputChecker}} id="name" (ngModelChange)="nameChange()">
+        <div class={{icon}}>
+          <span class="material-symbols-outlined">
+            error
+          </span>
+        </div>
+        <label for="name" class={{nameChecker}} >Bạn chưa nhập tên</label>
+      </div>
+      <div class="col">
+        <label for="email">Email:</label>
+        <input type="email" name="email" [(ngModel)]="email" class="input">
+        
+      </div>
+      <div class="col">
+        <label for="phone">Điện thoại:</label>
+        <input type="number" name="phone" [(ngModel)]="phone" class="input">
+        
+      </div>
+      <div class="col">
+        <label for="course">Chọn khóa học:</label>
+        <select name="course" [(ngModel)]="course" >
+          <option value="Ruby">Ruby</option>
+          <option value="Python">Python</option>
+          <option value="ReactJS">ReactJS</option>
+        </select>
+        <div class={{iconSelect}}>
+          <span class="material-symbols-outlined">
+            error
+            </span>
+        </div>
+        <label for="course" class={{courseChecker}} id="course">Bạn chưa chọn khóa học</label>
+      </div>
+      <div>
+        <div class="line">
+          <label for="shift" style="margin-right: 30px;" >Chọn ca học:</label>
+          <div class="line">
+            <input type="radio" name="shift" id="dayShift" [(ngModel)]="shift" value="Sang">
+            <label for="dayShift" style="margin-right: 20px;" >Sáng</label>
+          </div>
+          <div class="line">
+            <input type="radio" name="shift" id="nightShift" [(ngModel)]="shift" value="Toi">
+            <label for="nightShift">Tối</label>
+          </div>
+        </div>
+      </div>
+      <div class="line" >
+        <input type="checkbox" name="policy" id="policy" [(ngModel)]="policy" >
+        <label for="policy" class={{policyChecker}}>Đồng ý với điều khoản</label>
+      </div>
+      <button (click)="submit()">Submit</button>
+      <p> {{result}} </p>
+    </div>
+  </div>
+    
+    <!-- Include AngularJS library and your application scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Include your AngularJS application script files -->
+</body>
+</html>
+
+

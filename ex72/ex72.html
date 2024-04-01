@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, th, td {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <thead>
+        <tr style="background-color: #FFD966;">
+          <th colspan="4">List of Products</th>
+        </tr>
+        <tr style="background-color: #538135; color: white;">
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script>
+    var products = {
+      "Products":[
+        {"ProductID": "p123",
+        "ProductName": "DELL Inspiron 14NR",
+        "Quantity": 100,
+        "UnitPrice": 150000},
+        {"ProductID": "p456",
+        "ProductName": "HP Inspiron 113",
+        "Quantity": 130,
+        "UnitPrice": 140000},
+      ]
+    }
+    var tbody = document.getElementsByTagName("tbody")[0];
+    for (let i = 0; i < products.Products.length; i++) {
+      const product = products.Products[i];
+      var tr = document.createElement("tr");
+      var td_id = document.createElement("td");
+      var td_name = document.createElement("td");
+      var td_quantity = document.createElement("td");
+      var td_price = document.createElement("td");
+      td_id.innerHTML = product.ProductID;
+      td_name.innerHTML = product.ProductName;
+      td_quantity.innerHTML = product.Quantity;
+      td_price.innerHTML = product.UnitPrice;
+      tr.appendChild(td_id);
+      tr.appendChild(td_name);
+      tr.appendChild(td_quantity);
+      tr.appendChild(td_price);
+      tbody.appendChild(tr);
+    }
+    
+  </script>
+</body>
+</html>

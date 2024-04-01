@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="heading_img">
+      <img src="Logo.gif" alt="">
+    </div>
+    <h1 class="heading">Newborn Registration</h1>
+    <form action="ex51.html" method="post">
+      <div class="line">
+        <label for="Date">Date</label>
+        <input type="date" name="Date" id="Date">
+      </div>
+      <div class="line">
+        <label for="FirstName">1) Infant's first name:</label>
+        <input type="text" name="FirstName" id="FirstName">
+        <label for="LastName">Last</label>
+        <input type="text" name="LastName" id="LastName">
+      </div>
+      <div class="line">
+        <label for="Record">2) Medical Record#:</label>
+        <input type="text" name="Record" id="Record">
+      </div>
+      <div class="line">
+        <label for="birth">3) Date of birth</label>
+        <input type="date" name="birth" id="birth">
+      </div>
+      <div class="line">
+        <label for="weight">4) Birth weight: </label>
+        <input type="text" name="weight" id="weight">
+      </div>
+      <div class="line">
+        <label for="score">5) APGAR score:</label>
+        <input type="text" name="score" id="score">
+      </div>
+      <div class="line">
+        <label for="MFName">6) Mother's first name:</label>
+        <input type="text" name="MFName" id="MFName">
+        <label for="MLName">Last</label>
+        <input type="text" name="MLName" id="MLName">
+      </div>
+      <div class="line">
+        <label for="FFName">7) Father's first name:</label>
+        <input type="text" name="FFName" id="FFName">
+        <label for="FLName">Last</label>
+        <input type="text" name="FLName" id="FLName">
+      </div>
+      <div class="line">
+        <label for="Physician">8) Physician (check all that apply)</label>
+        <select name="Physician" id="Physician" size="4" multiple>
+          <option value="WAlbert">Dr.Warren Albert</option>
+          <option value="MAlvarez">Dr.Maria Alvarez</option>
+          <option value="KBrinkman">Dr.Karen Brinkman</option>
+          <option value="MKerry">Dr.Micheal Kerry</option>
+          <option value="WAlbert">Dr.Warren Albert</option>
+          <option value="MAlvarez">Dr.Maria Alvarez</option>
+          <option value="KBrinkman">Dr.Karen Brinkman</option>
+          <option value="MKerry">Dr.Micheal Kerry</option>
+        </select>
+      </div>
+      <div class="buttons">
+        <button type="submit">Resgister</button>
+        <button type="reset">Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

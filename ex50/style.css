@@ -1,0 +1,36 @@
+body {
+  margin: 0px;
+  background-color: #CCFFFF;
+}
+.heading_img {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.line {
+  display: flex;
+}
+input {
+  margin: 0px 10px;
+}
+textarea {
+  resize: none;
+  width: 70%;
+}
+table {
+  border: none;
+  justify-items: center;
+  max-width: 90%;
+}
+#Category {
+  width: 100px;
+}
+td, tr {
+  text-align: center;
+}

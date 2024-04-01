@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .main {
+      display: flex;
+      gap: 10px;
+    }
+    .items {
+      position: absolute;
+      z-index: 2;
+      top: 0px;
+    }
+    a.item {
+      background-color: blue;
+      width: 150px;
+      height: 70px;
+      display: block;
+      opacity: 0%;
+    }
+    .heading {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+    }
+  </style>
+</head>
+<body style="margin: 0px;">
+  <div class="main">
+    <div class="navi">
+      <img style="z-index: -1;" src="images/Product.jpg" alt="">
+      <div class="items" style="position: absolute;">
+        <a href="Scantext.htm" class="item"></a>
+        <a href="Printext.htm" class="item"></a>
+        <a href="PStext.htm" class="item"></a>
+        <a href="ex20.html" class="item"></a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="heading">
+        <img src="images/Jackson.jpg" alt="">
+        <h1 style="text-align: center;">Jackson Electronics Introduces <br>
+          a New Line of Products</h1>
+      </div>
+      <p>
+        Jackson Electronics announced this month a new line of small business printers, copiers and scanners.
+        Designed to meet the growing need for economical scanning and printing solutions, the new products do not 
+        sacrifice quality or dependability. <br><br>
+
+
+        The ScanMaster continues Jackson Electronics' leadership in the field of flatbed scanners. With the 
+        patented "Single-Pass" technology, the ScanMaster is fast, with image quality better than multiple-pass
+        scanners. <br><br>
+
+        Building on its popular line of laser printers, Jackson Electronics introduces the LaserPrint 5000. The
+        LaserPrint 5000 prints b&w text at 12 ppm. and its memory expands up to 24 megabytes for graphic-intensive
+        print jobs. <br><br>
+        
+        The new Print/Scan 150 combines the benefits of a printer, copier and scanner - all in one! And all without
+        sacrificing quality. Save money (and space) with this three-in-one product. <br><br>
+        Interested? Click one of the product names to the left for more information. 
+      </p>
+    </div>
+  </div>
+</body>
+</html>

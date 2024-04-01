@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display:flex;
+      align-items:center;
+      margin: 0px auto;
+      flex-direction:column;
+      width: fit-content;
+      height: 100vh;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 5px;
+    }
+    
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <img class="heading" src="images/heading.jpg" alt="">
+    </div>
+    <iframe name="main" src="Casttour.html" frameborder="0"></iframe>
+    <div class="nav">
+      <img class="nav" src="images/navigation.jpg" alt="" usemap="#nav">
+      <map name="nav">
+        <area target="main" alt="" title="" href="Laketour.html" coords="104,1,192,51" shape="rect">
+        <area target="main" alt="" title="" href="Casttour.html" coords="212,0,302,51" shape="rect">
+        <area target="main" alt="" title="" href="Hightour.html" coords="317,-1,412,51" shape="rect">
+        <area target="main" alt="" title="" href="Hebdtour.html" coords="428,0,510,51" shape="rect">
+      </map>
+    </div>
+  </div>
+</body>
+</html>

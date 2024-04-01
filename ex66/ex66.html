@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, td {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <tr>
+        <td colspan="2" style="background-color: #E2EFD9; text-align: center;">Student Information</td>
+      </tr>
+      <tr>
+        <td >Student ID:</td>
+        <td id="id"></td>
+      </tr>
+      <tr>
+        <td>Student Name:</td>
+        <td id="name"></td>
+      </tr>
+      <tr>
+        <td>Birthday:</td>
+        <td id="birth"></td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <td id="gender"></td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    var txt = "<student>" + 
+      "<id>987456</id>" +
+      "<name>Marie Curie</name>" +
+      "<birthday>7/11/1867</birthday>" + 
+      "<gender>Woman</gender>" + 
+      "</student>";
+    var parser = new DOMParser();
+    var xmlDoc = parser.parseFromString(txt, "text/xml");
+    document.getElementById("id").innerHTML =
+    xmlDoc.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+    document.getElementById("name").innerHTML =
+    xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    document.getElementById("birth").innerHTML =
+    xmlDoc.getElementsByTagName("birthday")[0].childNodes[0].nodeValue;
+    document.getElementById("gender").innerHTML =
+    xmlDoc.getElementsByTagName("gender")[0].childNodes[0].nodeValue;
+  </script>
+
+</body>
+</html>

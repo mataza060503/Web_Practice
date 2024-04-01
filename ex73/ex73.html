@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, th, td {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <thead>
+        <tr style="background-color: #538135; color: white;">
+          <th>Product Code</th>
+          <th>Product Name</th>
+          <th>Unit Price</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script>
+    var products = [
+ {
+ code: "sp1",
+ name: "Cocacola",
+ price: 15000
+ },
+ {
+ code: "sp2",
+ name: "Pepsi",
+ price: 25000
+ },
+ {
+ code: "sp3",
+ name: "Sting",
+ price: 17000
+ },
+ ] 
+    var tbody = document.getElementsByTagName("tbody")[0]
+    for (let i = 0; i < products.length; i++) {
+      const product = products[i];
+      var tr = document.createElement("tr");
+      var td_code = document.createElement("td");
+      var td_name = document.createElement("td");
+      var td_price = document.createElement("td");
+      td_code.innerHTML = product.code;
+      td_name.innerHTML = product.name;
+      td_price.innerHTML = product.price;
+      td_code.style.color = "#538135";
+      td_name.style.color = "#538135";
+      tr.appendChild(td_code);
+      tr.appendChild(td_name);
+      tr.appendChild(td_price);
+      tbody.appendChild(tr);
+    }
+  </script>
+</body>
+</html>

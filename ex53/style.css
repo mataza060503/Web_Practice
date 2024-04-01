@@ -1,0 +1,29 @@
+.container {
+  width: fit-content;
+}
+.item {
+  border: solid 1px ;
+}
+.item2 {
+  border: solid 1px;
+  border-top: none;
+  padding: 5px 10px;
+}
+.line {
+  display: flex;
+  justify-content: right;
+}
+button {
+  display: flex;
+  margin-left: auto;
+  margin-top: 5px;
+  background-color: #FFC000;
+  border: solid 1px #BC8C00;
+  border-radius: none;
+  color: white;
+  padding: 10px 25px;
+}
+td {
+  padding: 0px 10px;
+}
+

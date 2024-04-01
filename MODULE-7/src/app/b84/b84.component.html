@@ -1,0 +1,40 @@
+<table border="1">
+  <thead>
+    <tr >
+      <th colspan="2">The quadratic equation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>a:</td>
+      <td>
+        <input type="number" [(ngModel)]="inpA">
+      </td>
+    </tr>
+    <tr>
+      <td>b:</td>
+      <td>
+        <input type="number" [(ngModel)]="inpB">
+      </td>
+    </tr>
+    <tr>
+      <td>c:</td>
+      <td>
+        <input type="number" [(ngModel)]="inpC">
+      </td>
+    </tr>
+    <tr>
+      <td>Result:</td>
+      <td>
+        <p> {{result}} </p>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button (click)="solve()">Find Solution</button>
+        <button (click)="clear()">Clear</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

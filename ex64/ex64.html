@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+  <title>Document</title>
+  <style>
+    table, tr, td {
+      border: solid 2px black;
+      border-collapse: collapse;
+    }
+    form table {
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="" name="form_input">
+      <table id="input">
+        <tr>
+          <td>
+            <label for="id" class="id">ID:</label>
+          </td>
+          <td>
+            <input type="text" name="id" id="id">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="name" class="name">Full Name:</label>
+          </td>
+          <td>
+            <input type="text" name="name" id="name">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="button" onclick="insert()">Insert Data</button>
+            <ion-icon name="trash-outline"></ion-icon>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <form action="" name="form_result">
+      <table class="result">
+        <tr>
+          <td>ID</td>
+          <td>Full Name</td>
+          <td>#</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <script>
+    function insert() {
+      var tr = document.createElement("tr");
+      var tdId = document.createElement("td");
+      var tdName = document.createElement("td");
+      var tdButton = document.createElement("td");
+      var result_table = document.querySelector(".result");
+
+      var id = document.getElementById("id").value;
+      var name = document.getElementById("name").value;
+
+      if (id === "" || name === "") {
+        alert("please enter all information!")
+      } else {
+        tdId.innerHTML = id;
+        tdName.innerHTML = name;
+
+        tdButton.innerHTML = '<ion-icon name="trash-outline"></ion-icon>';
+        tdButton.style.cursor = "pointer";
+        tdButton.addEventListener("click", function (icon) {
+          var row = this.closest("tr");
+          row.remove();
+        })
+
+        console.log(tdId);
+        tr.appendChild(tdId);
+        tr.appendChild(tdName);
+        tr.appendChild(tdButton);
+        result_table.appendChild(tr);
+      }
+    }
+  </script>
+</body>
+</html>

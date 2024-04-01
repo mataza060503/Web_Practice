@@ -1,0 +1,7 @@
+table, tr, td, th {
+  border: solid 2px blue;
+  border-collapse: collapse;
+}
+img {
+  max-width: 50%;
+}

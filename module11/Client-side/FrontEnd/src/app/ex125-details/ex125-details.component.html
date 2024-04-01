@@ -1,0 +1,33 @@
+<p>ex125-details works!</p>
+<h1>QUẢN LÍ THÔNG TIN SÁCH  </h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Tên Sách</th>
+        <th>Giá Bán</th>
+        <th>Mô Tả</th>
+        <th>Anh bìa</th>
+        <th>Ngày Cập Nhật</th>
+        <th>Số Lượng Tồn</th>
+        <th>Mã CD</th>
+        <th>Mã NXB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> {{selectedBook.name}} </td>
+        <td> {{selectedBook.price}} </td>
+        <td> {{selectedBook.description}} </td>
+        <td>
+          <img src="http://localhost:3000/books/image/{{selectedBook.image}}" alt="">
+        </td>
+        <td> {{selectedBook.date}} </td>
+        <td> {{selectedBook.quantity}} </td>
+        <td> {{selectedBook.maCD}} </td>
+        <td> {{selectedBook.maNXB}} </td>
+      </tr>
+      <tr>
+        <button (click)="back()">Back</button>
+      </tr>
+    </tbody>
+  </table>

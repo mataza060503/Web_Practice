@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        vars[key] = value;
+      });
+      return vars;
+    }
+    var fullname = unescape(getUrlVars()["fullName"])
+    var email = unescape(getUrlVars()["Email"])
+    var sendto = unescape(getUrlVars()["sendTo"])
+    var title = unescape(getUrlVars()["Title"])
+    var content = unescape(getUrlVars()["Content"])
+  </script>
+</head>
+<body>
+  <h1 class="heading">
+    Your all data here!
+  </h1>
+  <form action="ex52_server.html" method="get">
+    <b>Contact the editorial office</b>
+    <div class="input">
+      <label for="fullName">Full Name</label>
+      <label for="" id="fullname"></label>
+    </div>
+    <div class="line">
+      <div class="input">
+        <label for="Email">Email</label>
+        <label for="" id="email"></label>
+      </div>
+      <div class="input">
+        <label for="sendTo">Send to</label>
+        <label for="" id="sendto"></label>
+      </div>
+    </div>
+    <div class="input">
+      <label for="">Title</label>
+      <label for="" id="title"></label>
+    </div>
+    <div class="input">
+      <label for="content">Content</label>
+      <label for="" id="content"></label>
+    </div>
+    <button type="submit">Send</button>
+  </form>
+<script>
+  document.getElementById("fullname").innerHTML = fullname.replace("+"," ")
+  document.getElementById("email").innerHTML = email
+  document.getElementById("sendto").innerHTML = sendto.replace("+"," ")
+  document.getElementById("title").innerHTML = title
+  document.getElementById("content").innerHTML = content
+  
+</script>
+</body>
+</html>

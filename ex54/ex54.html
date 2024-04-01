@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      max-width: 350px;
+    }
+    .display {
+      display: flex;
+      flex-direction: column;
+    }
+    .input {
+      display: flex;
+      gap: 10px;
+    }
+    .text {
+      width: 150px;
+      margin: 0px;
+      border: solid 1px black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="display">
+      <div class="input">
+        <p class="text">a:</p>
+        <input class="text" type="number" id="inpA">
+      </div>
+      <div class="input">
+        <p class="text">b:</p>
+        <input class="text" type="number" id="inpB">
+      </div>
+      <div class="input">
+        <p class="text">c:</p>
+        <input class="text" type="number" id="inpC">
+      </div>
+      <div class="input">
+        <p class="text">Result:</p>
+        <p class="text" 
+        id="result"></p>
+      </div>
+    </div>
+    <div class="buttons">
+      <button onclick="max()" id="btnMax">MAX</button>
+      <button onclick="min()" id="btnMin">MIN</button>
+      <button onclick="sin()" id="btnSin">Sin(a)</button>
+      <button onclick="cos()" id="btnCos">Cos(a)</button>
+      <button onclick="exp()" id="btnExp">a^b</button>
+    </div>
+  </div>
+  <script type="text/javascript">
+    function max() {
+      var a = document.getElementById("inpA").value;
+      var b = document.getElementById("inpB").value;
+      var c = document.getElementById("inpC").value;
+      var result = Math.max(a,b,c)
+      document.getElementById
+      ("result").innerHTML = result;
+    }
+
+    function min() {
+      var a = document.getElementById("inpA").value;
+      var b = document.getElementById("inpB").value;
+      var c = document.getElementById("inpC").value;
+      var result = Math.min(a,b,c)
+      document.getElementById
+      ("result").innerHTML = result;
+    }
+
+    function sin() {
+      var a = document.getElementById("inpA").value;
+      result=Math.sin(a)
+      document.getElementById
+      ("result").innerHTML = result;
+    }
+
+    function cos() {
+      var a = document.getElementById("inpA").value;
+      result=Math.cos(a)
+      document.getElementById
+      ("result").innerHTML = result;
+    }
+
+    function exp() {
+      var a = document.getElementById("inpA").value;
+      var b = document.getElementById("inpB").value;
+      result=a**b
+      document.getElementById
+      ("result").innerHTML = result;
+    }
+  </script>
+</body>
+</html>

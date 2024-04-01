@@ -1,0 +1,16 @@
+.wrong {
+  border: solid 1px red;
+  outline: solid 1px red;
+  border-radius: 3px;
+  padding: 5px;
+}
+.right {
+  border: solid 1px aqua;
+  outline: none;
+  border-radius: 3px;
+  padding: 5px;
+}
+.resultWrong {
+  color: red;
+  font-weight: 500;
+}

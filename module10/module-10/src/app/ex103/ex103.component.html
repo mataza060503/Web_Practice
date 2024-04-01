@@ -1,0 +1,49 @@
+<h3 class="text-center text-white bg-dark p-3">Bitcoin Price Index</h3>
+<p> {{errMessage}} </p>
+<table  class="table table -hover">
+  
+  <thead>
+    <tr>
+      <td colspan="6"> <b>Time:</b> <br>
+        updated: {{data.time.updated}} <br>
+        updatedISO: {{data.time.updatedISO}} <br>
+        updateduk: {{data.time.updateduk}}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="6"><b>disclaimer:</b> {{data.disclaimer}} </td>
+    </tr>
+    <tr>
+      <th>BPI</th>
+      <th>Code</th>
+      <th>Symbol</th>
+      <th>Rate</th>
+      <th>Description</th>
+      <th>Rate float</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>USD</td>
+    <td> {{data.bpi.USD.code}} </td>
+    <td> {{data.bpi.USD.symbol}} </td>
+    <td> {{data.bpi.USD.rate}} </td>
+    <td> {{data.bpi.USD.description}} </td>
+    <td> {{data.bpi.USD.rate_float}} </td>
+  </tr>
+  <tr>
+    <td>GBP</td>
+    <td> {{data.bpi.GBP.code}} </td>
+    <td> {{data.bpi.GBP.symbol}} </td>
+    <td> {{data.bpi.GBP.rate}} </td>
+    <td> {{data.bpi.GBP.description}} </td>
+    <td> {{data.bpi.GBP.rate_float}} </td>
+  </tr>
+  <tr>
+    <td>EUR</td>
+    <td> {{data.bpi.EUR.code}} </td>
+    <td> {{data.bpi.EUR.symbol}} </td>
+    <td> {{data.bpi.EUR.rate}} </td>
+    <td> {{data.bpi.EUR.description}} </td>
+    <td> {{data.bpi.EUR.rate_float}} </td>
+  </tr>
+</table>

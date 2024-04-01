@@ -1,0 +1,35 @@
+body {
+  margin: 0px;
+}
+.container {
+  display: flex;
+  gap: 10px;
+  height: 100vh;
+}
+.nav {
+  background: url(images/back.jpg);
+  
+}
+.nav ul {
+  padding-right: 50px;
+}
+.title {
+  color: #FFBB41;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.floater {
+  float: right;
+  border: solid 3px #593900;
+  margin: 0px 10px;
+  padding: 0px 5px;
+}
+hr {
+  border: solid 1px #FFBB41;
+}
+.footer {
+  color: #FFBB41;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}

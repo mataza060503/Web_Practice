@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex29</title>
+  <style>
+    .container {
+      display: flex;
+    }
+    iframe {
+      width: 100vw;
+      height: 100vh;
+    }
+    .nav {
+      border-right: solid black 1px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="heading">
+        <img src="images/DCCLogo.jpg" alt="">
+      </div>
+      <hr>
+      <div class="map">
+        <img src="images/Map.jpg" alt="Map" usemap="#map">
+        <map name="map">
+          <area shape="poly" coords="15,21,85,20,89,101,69,106,41,100,25,89,13,65,12,47,13,33,13,30" href="W.html" alt="" target="main">
+          <area shape="poly" coords="86,22,121,18,135,22,147,28,160,34,165,46,164,55,172,55,170,62,165,70,155,67,139,79,93,75" href="MW.html" alt="" target="main">
+          <area shape="poly" coords="90,78,137,79,154,67,166,75,182,70,189,84,178,102,170,113,174,130,151,117,139,119,123,121,107,132,77,107,89,98" href="S.html" target="main" alt="">
+          <area shape="poly" coords="167,69,174,53,183,47,196,37,207,39,213,29,219,29,222,37,215,49,211,62,198,68,192,80,183,66,174,75" href="NE.html" target="main" alt="">
+        </map>
+      </div>
+    </div>
+    <iframe src="W.html" frameborder="0" name="main"></iframe>
+  </div>
+</body>
+</html>

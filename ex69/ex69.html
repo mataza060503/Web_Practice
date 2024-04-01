@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, th, td {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+    select {
+      border: none;
+    }
+    td, th {
+      padding-right: 20px;
+    }
+    th {
+      text-align: left;
+    }
+    .heading th {
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th colspan="2" align="left">
+            <select name="filter" id="filter">
+              <option value="all">All</option>
+              <option value="architect">Architect</option>
+              <option value="engineer">Engineer</option>
+              <option value="teacher">Teacher</option>
+            </select>
+          </th>
+        </tr>
+        <tr class="heading">
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "employees.xml", true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState==4 && xhr.status==200) {
+        var xmlDoc = xhr.responseXML;
+        var employees = xmlDoc.getElementsByTagName("employee");
+        var tbody = document.getElementsByTagName("tbody")[0];
+        for (let i = 0; i < employees.length; i++) {
+          const employee = employees[i];
+          var id = employee.getAttribute("id");
+          console.log(employee.getAttribute("title"));
+          var name = employee.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+          var phone = employee.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+          var td_id = document.createElement("td");
+          var td_name = document.createElement("td");
+          var td_phone = document.createElement("td");
+          var tr = document.createElement("tr");
+          td_id.innerHTML = id;
+          td_name.innerHTML = name;
+          td_phone.innerHTML = phone;
+          tr.appendChild(td_id);
+          tr.appendChild(td_name);
+          tr.appendChild(td_phone);
+          tbody.appendChild(tr);
+        }
+        document.getElementsByTagName("select")[0].addEventListener("change", function () {
+          var filter = document.getElementsByTagName("select")[0].value;
+          filterTool(employees, filter);
+        })
+      }
+    }
+    function filterTool(employees, filter) {
+      console.log(filter)
+      console.log(employees)
+      var tbody = document.getElementsByTagName("tbody")[0]
+      tbody.innerHTML = "";
+      for (let i = 0; i < employees.length; i++) {
+        const employee = employees[i];
+        var title = employee.getAttribute("title");
+        console.log(title)
+        if (title === filter) {
+          var id = employee.getAttribute("id");
+          var name = employee.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+          var phone = employee.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+
+          var td_id = document.createElement("td");
+          var td_name = document.createElement("td");
+          var td_phone = document.createElement("td");
+          var tr = document.createElement("tr");
+          td_id.innerHTML = id;
+          td_name.innerHTML = name;
+          td_phone.innerHTML = phone;
+          tr.appendChild(td_id);
+          tr.appendChild(td_name);
+          tr.appendChild(td_phone);
+          tbody.appendChild(tr);
+        
+        }
+      }
+    }
+  </script>
+</body>
+</html>

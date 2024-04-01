@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, td {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <tr>
+        <td colspan="2" style="background-color: #E2EFD9; text-align: center;">Student Information</td>
+      </tr>
+      <tr>
+        <td >Student ID:</td>
+        <td id="id"></td>
+      </tr>
+      <tr>
+        <td>Student Name:</td>
+        <td id="name"></td>
+      </tr>
+      <tr>
+        <td>Birthday:</td>
+        <td id="birth"></td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <td id="gender"></td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+    
+    var index = getUrlParameter('index');
+    console.log(index)
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "data.xml", true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState==4 && xhr.status==200) {
+        var xmlDoc = xhr.responseXML;
+        var selectedStudent = xmlDoc.getElementsByTagName("student")[index]
+        console.log(selectedStudent)
+        document.getElementById("id").innerHTML =
+        selectedStudent.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+        document.getElementById("name").innerHTML =
+        selectedStudent.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        document.getElementById("birth").innerHTML =
+        selectedStudent.getElementsByTagName("birthday")[0].childNodes[0].nodeValue;
+        document.getElementById("gender").innerHTML =
+        selectedStudent.getElementsByTagName("gender")[0].childNodes[0].nodeValue;
+      }
+    }
+  </script>
+
+</body>
+</html>

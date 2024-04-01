@@ -1,0 +1,43 @@
+<h3 class="text-center text-white bg-dark p-3">US Public Data</h3>
+<table class="table table -hover">
+  <thead>
+    <tr>
+      <th>ID Nation</th>
+      <th>Nation</th>
+      <th>ID Year</th>
+      <th>Year</th>
+      <th>Population</th>
+      <th>Slug Nation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data.data">
+      <td> {{item['ID Nation']}} </td>
+      <td> {{item.Nation}} </td>
+      <td> {{item['ID Year']}} </td>
+      <td> {{item.Year}} </td>
+      <td> {{item.Population}} </td>
+      <td> {{item['Slug Nation']}} </td>
+    </tr>
+    <tr *ngFor="let sources of data.source">
+      <td colspan="6">
+        <b>Sources: </b> <br>
+        <b>Measures:</b>
+        <div *ngFor="let measure of sources.measures">
+          <p> {{measure}} </p> <br>
+        </div>
+        <b>Anotations:</b> <br>
+        <p>Source Name: {{sources.annotations.source_name}} </p>
+        <p>Source Description: {{sources.annotations.source_description}} </p>
+        <p>Source Dataset Name: {{sources.annotations.dataset_name}} </p>
+        <p>Source Dataser Link: {{sources.annotations.dataset_link}} </p>
+        <p>Source Table ID: {{sources.annotations.table_id}} </p>
+        <p>Source Topic: {{sources.annotations.topic}} </p>
+        <p>Source Subtoptic: {{sources.annotations.subtopic}} </p>
+        <p><b>Name: </b> {{sources.name}} </p>
+        <p><b>Substitutions: </b> {{sources.substitutions}} </p>
+      </td>
+    </tr>  
+  </tbody>
+</table>
+<p> {{errMessage}} </p>

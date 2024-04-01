@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">   
+</head>
+<body>
+  <div class="container">
+    <div class="heading_img">
+      <img src="images/Jackson.gif" alt="">
+    </div>
+    <h1 class="heading">Registration Form</h1>
+    <form action="Register.html" method="get">
+      <label for="" class="Form_Title">Register your Jackson Electronics product here</label>
+      <div class="main">
+        <div class="line">
+          <label class="line_title" for="FirstName">First Name</label>
+          <input type="text" name="FirstName" id="FirstName">
+          <label for="LastName">LastName</label>
+          <input type="text" name="LastName" id="LastName">
+        </div>
+        <div class="line">
+          <label for="Address1" class="line_title">Address#1</label>
+          <input type="text" name="Address1" id="Address1">
+        </div>
+        <div class="line">
+          <label for="Address2" class="line_title">Address#2</label>
+          <input type="text" name="Address2" id="Address2">
+        </div>
+        <div class="line">
+          <label for="City" class="line_title">City</label>
+          <input type="text" id="City" name="City">
+          <label for="State">State</label>
+          <input type="text" name="State" id="State">
+          <label for="Zip">Zip</label>
+          <input type="text" name="Zip" id="Zip">
+        </div>
+        <div class="line">
+          <label for="Country" class="line_title">Country</label>
+          <input type="text" name="Country" id="Country">
+        </div>
+        <hr>
+        <div class="line">
+          <Label class="line_title" for="Product">Product</Label>
+          <select name="Product" id="Product">
+            <option value="">United Stated</option>
+            <option value="">Vietnam</option>
+          </select>
+        </div>
+        <div class="line">
+          <label for="DatePurchased" class="line_title">Date Purchased</label>
+          <input type="date" name="DatePurchased" id="DatePurchased">
+        </div>
+        <div class="line">
+          <label for="Serial" class="line_title">Serial</label>
+          <input type="text" name="Serial" id="Serial">
+        </div>
+        <div class="line">
+          <label for="UsedFor" class="line_title">Used for</label>
+          <div class="used_options">
+            <div class="used_option">
+              <input type="radio" name="UsedFor" id="UF1" value="Home">
+              <label for="UF1">Home</label>
+            </div>
+            <div class="used_option">
+              <input type="radio" name="UsedFor" id="UF2" value="Educational Institution">
+              <label for="UF2">Educational Institution</label>
+            </div>
+            <div class="used_option">
+              <input type="radio" name="UsedFor" id="UF3" value="Business">
+              <label for="UF3">Business</label>
+            </div>
+            <div class="used_option">
+              <input type="radio" name="UsedFor" id="UF4" value="Other">
+              <label for="UF4">Other</label>
+            </div>
+          </div>
+        </div>
+        <div class="line">
+          <label for="System" class="line_title">System (check all that apply)</label>
+          <div class="used_options">
+            <div class="used_option">
+              <input type="checkbox" name="System" id="S1" value="Windows">
+              <label for="S1">Windows</label>
+            </div>
+            <div class="used_option">
+              <input type="checkbox" name="System" id="S2" value="UNIX">
+              <label for="S2">UNIX</label>
+            </div>
+            <div class="used_option">
+              <input type="checkbox" name="System" id="S3" value="Macintosh">
+              <label for="S3">Macintosh</label>
+            </div>
+            <div class="used_option">
+              <input type="checkbox" name="System" id="S4" value="Other">
+              <label for="S4">Other</label>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="line">
+          <label for="Comments" class="line_title">Comments?</label>
+          <textarea name="Comments" id="Comments" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="button" onclick="alert()">Click to register</button>
+        <button type="reset">Click to cancel</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    function alert() {
+      alert("Registerd!")
+    }
+  </script>
+</body>
+</html>

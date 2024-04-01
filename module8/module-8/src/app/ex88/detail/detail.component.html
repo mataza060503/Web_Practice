@@ -1,0 +1,24 @@
+<table border="1">
+  <tr>
+    <td>
+      <button (click)="goBack()">Go back</button>
+    </td>
+  </tr>
+  <tr>
+    <td>ID:</td>
+    <td> {{selectedProduct.Id}} </td>
+  </tr>
+  <tr>
+    <td>Name:</td>
+    <td> {{selectedProduct.Name}} </td>
+  </tr>
+  <tr>
+    <td>Price:</td>
+    <td> {{selectedProduct.Price}} </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <img src={{selectedProduct.ImagePath}} alt="">
+    </td>
+  </tr>
+</table>

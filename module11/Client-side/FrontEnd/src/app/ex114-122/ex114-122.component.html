@@ -1,0 +1,53 @@
+<p>books works!</p>
+{{errMessage}}
+<table border="1">
+<tr>
+  <td colspan="3">
+    <input type="text" [(ngModel)]="searchInp" placeholder="Search for Book Id">
+  </td>
+  <td>
+    <button (click)="search()">Search</button>
+  </td>
+</tr>
+<tr>
+  <td>
+    <input type="text" [(ngModel)]="book.BookId" placeholder="Book Id">
+  </td>
+  <td>
+    <input type="text" [(ngModel)]="book.BookName" placeholder="Book Name">
+  </td>
+  <td>
+    <input type="number" [(ngModel)]="book.Price" placeholder="Price">
+  </td>
+  <td>
+    <form action="http://localhost:3000/books" method="post"> 
+      {{fileName || "No file uploaded yet."}}
+      <input type="file" > 
+    </form>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+    <button (click)="add()" >Add</button>
+    <button (click)="update()" type="submit">Update</button>
+    <button (click)="delete()">Delete</button>
+  </td>
+</tr>
+<tr>
+<td>BookId</td>
+<td>BookName</td>
+<td>Price</td>
+<td>Image</td>
+</tr>
+<tbody>
+<tr *ngFor="let book of bookData">
+<td>{{book.BookId}}</td>
+<td>{{book.BookName}}</td>
+<td>{{book.Price}} </td>
+<td>
+<img src="http://localhost:3000/books/image/{{book.Image}}" width="50px"
+height="50px">
+</td>
+</tr>
+</tbody>
+</table>

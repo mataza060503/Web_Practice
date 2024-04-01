@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, td, th {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <thead>
+        <tr style="background-color: #FFD966;"> 
+          <th colspan="4">List of Students</th>
+        </tr>
+        <tr style="background-color: #538135;">
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Birthday</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "data.xml", true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var xmlDoc = xhr.responseXML;
+        console.log(xmlDoc);
+        var students = xmlDoc.getElementsByTagName("student");
+        console.log(students)
+        var tbody = document.getElementsByTagName("tbody");
+        
+
+        for (let i = 0; i < students.length; i++) {
+          const student = students[i];
+          var id = student.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+          var name = student.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+          var birthday = student.getElementsByTagName("birthday")[0].childNodes[0].nodeValue;
+          var gender = student.getElementsByTagName("gender")[0].childNodes[0].nodeValue; 
+          
+          var tr = document.createElement("tr");
+          var td_id = document.createElement("td");
+          var td_name = document.createElement("td");
+          var td_birth = document.createElement("td");
+          var td_gender = document.createElement("td");
+          td_id.innerHTML=id;
+          td_name.innerHTML=name;
+          td_birth.innerHTML=birthday;
+          td_gender.innerHTML=gender;
+          tr.appendChild(td_id);
+          tr.appendChild(td_name);
+          tr.appendChild(td_birth);
+          tr.appendChild(td_gender);
+          tbody[0].appendChild(tr);
+          tr.addEventListener("click", function () {
+            window.location.href = "detail.html?index=" + i;
+          })
+        }
+      }
+    }
+  </script>
+</body>
+</html>

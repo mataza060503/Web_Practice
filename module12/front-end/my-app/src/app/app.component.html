@@ -1,0 +1,61 @@
+<!-- <router-outlet></router-outlet> -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<div class="cart-wrapper" id="cartPopup">
+  <div class="cart-background" (click)="closeCart()"></div>
+  <div class="cart-container">
+    <div class="cart-popup">
+      <div class="cart-popup-container">
+        <div class="cart-popup-table">
+          <div class="cart-popup-item" *ngFor="let item of ListFashionSelected">
+            <div class="cart-popup-images">
+              <img class="cart-popup-images" src={{item.Item.thumbnail}} alt="">
+            </div>
+            <div class="cart-popup-content">
+              <h3 class="cart-popup-title"> {{item.Item.fashion_title}} </h3>
+              <div class="cart-popup-detail" style="margin-top: auto;">
+                <div class="cart-popup-style"> {{item.Item.fashion_title}} </div>
+                <div class="cart-popup-date"> {{item.Item.creation_date}} </div>
+              </div>
+            </div>
+            <div class="cart-popup-item-controls" style="display: flex; flex-direction: column;">
+              <div class="cart-popup-quantity" style="margin-bottom: auto;">
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="" id="quantity" [(ngModel)]="item.Count" min="0">
+              </div>
+              <button class="btn cart-popup-btn2" (click)="Delete(item)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-popup-btns">
+        <button class="btn cart-popup-btn" (click)="updateCounts()">Update</button>
+        <button class="btn cart-popup-btn" (click)="closeCart()" >Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="navigation">
+  <h1 class="logo" style="color: wheat;">My Fashion Shop</h1>
+  <div class="nav">
+    <ul class="menu">
+      <li class="menu-item" (click)="navigation('homepage')">Homepage</li>
+      <li class="menu-item" (click)="navigation('manage')">Manage</li>
+    </ul>
+  </div>
+  <div class="search">
+    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" /> 
+    <span style="font-size: 32px; cursor: pointer;" class="material-symbols-outlined">
+      search
+      </span>
+    <div class="cart" (click)="viewCart()">
+      <label (click)="viewCart()" for="" class="badge"> {{badge}} </label>
+      <span class="material-symbols-outlined" style="font-size: 32px; ">
+        shopping_cart
+      </span>
+    </div>
+  </div>
+</div>
+<router-outlet name="ex133"></router-outlet>
+<app-ex136></app-ex136>
+<app-fashion-detail></app-fashion-detail>
+<app-fashion></app-fashion>

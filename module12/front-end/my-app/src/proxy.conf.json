@@ -1,0 +1,14 @@
+[
+  {
+    "target": "http://localhost:3002",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "target": "https://www.dongabank.com.vn",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  } 
+]

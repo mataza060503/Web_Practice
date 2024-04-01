@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="login">
+    <h1>Login to the Teacher</h1>
+    <hr>
+    <div class="content">
+      <div>
+        <img src="./assets/FIS.png" alt="">
+      </div>
+      <form action="">
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Email">
+        <label class={{emailActive}} for="email">Invalid email!</label>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Password">
+        <label class={{passwordActive}} for="password">At least 5 characters</label>
+        <button (click)="login()">Log in</button>
+      </form>
+    </div>
+    <p> {{result}} </p>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+body{
+  background-image: url(images/Wrap.jpg);
+  background-repeat:repeat;
+}
+.container{
+  display:block;
+}
+.nav {
+  background-color: black;
+  padding-right: 20px;
+  vertical-align: top;
+}
+h3{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 14px;
+}
+a{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: green;
+  text-decoration: none;
+}
+
+a:hover{
+  color: wheat;
+}
+a:active{
+  color: aquamarine;
+}
+
+h2{
+  color: green;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+b{
+  color: red;
+}
+.sub_heading b{
+  color: black;
+}
+table{
+  border: 1pt;
+  border-color: white;
+  background-color: white;
+}
+.content1 img {
+  float: left;
+}
+.content2 img {
+  float: right;
+}
+.heading_img, .sub_heading{
+  text-align: center;
+}
+
+.sub_heading {
+  background-color: #FFD700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.main {
+  display: flex;
+}
+.bottom {
+  color: green;
+  text-align: center;
+}

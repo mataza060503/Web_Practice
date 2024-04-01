@@ -1,0 +1,97 @@
+.slider-wrapper {
+  width: 100vw;
+  height: 200px;
+  overflow: hidden;
+}
+::ng-deep .p-carousel-container {
+  height: 350px;
+}
+.item {
+  max-width: 300px;
+  height: 300px;
+  text-align: center;
+  position: relative;
+  margin: 20px 20px;
+  background-color: wheat;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: linear 0.2s;
+}
+.item:hover {
+  max-width: 300px;
+  height: 300px;
+  text-align: center;
+  position: relative;
+  margin: 20px 20px;
+  background-color: wheat;
+  box-shadow: aqua 0px 8px 24px;
+}
+.item:hover .text {
+  transition: linear 0.2s;
+  font-weight: 500;
+}
+.item-image {
+  margin: 7px;
+  max-width: 260px;
+  max-height: 300px;
+  overflow: hidden;
+}
+.text {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%,0%);
+  background-color: white;
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 16px;
+  font-weight: 400;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+::ng-deep .p-carousel-indicator .p-link {
+  width: 10px;height: 10px;
+  border-radius: 100rem;
+}
+::ng-deep .p-carousel-indicator .p-link:hover {
+  background-color: wheat;
+}
+::ng-deep .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background-color: wheat;
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 50px 0px;
+}
+.detail-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.detail-btn {
+  background-color: wheat;
+  font-weight: 500;
+}
+.detail-btn:hover {
+  background-color: white;
+  outline: solid 2px wheat;
+  color: wheat;
+}
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+}
+.detail-image {
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+}
+
+
+

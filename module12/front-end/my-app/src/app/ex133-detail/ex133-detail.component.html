@@ -1,0 +1,38 @@
+
+<div class="wrapper">
+  <div class="detail">
+    <div class="detail-image">
+      <img src={{selectedFashion.thumbnail}} alt="">
+    </div>
+    <div class="detail-content">
+      <h1 class="detail-title"> {{selectedFashion.fashion_title}} </h1>
+      <div class="detail-content">
+        <div class="detail-des">
+          <h3 class="detail-des-title">Description:</h3>
+          <p class="detail-detail"> {{selectedFashion.fashion_details}} </p>
+        </div>
+        
+        <p class="detail-date">Post date: {{selectedFashion.creation_date}} </p>
+      </div>
+      <div class="detail-btns">
+        <button class="btn detail-btn" (click)="addToCart()">Add to Cart</button>
+        <button class="btn detail-btn" >Buy Now</button>
+      </div>
+    </div>
+  </div>
+  <h3 class="detail-more" style="margin-left: 70px;">Related Fashions</h3>
+  <div class="detail-slider">
+    <p-carousel [value]="selectedStyle" [numVisible]="4" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions"  [autoplayInterval]="5000">
+      <ng-template let-minimalItem pTemplate="item" >
+          <div class="item" (click)="goDetails(minimalItem._id)">
+              <div class="item-image-container">
+                <img [src]="minimalItem.thumbnail" class="item-image" />
+              </div>
+              <div class="text" >
+                {{minimalItem.fashion_title}}
+              </div>
+          </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

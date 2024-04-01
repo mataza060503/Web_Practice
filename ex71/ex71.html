@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border: solid, 1px, black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table border="1">
+      <tr>
+        <td>ID:</td>
+        <td id="id"></td>
+      </tr>
+      <tr>
+        <td>First Name:</td>
+        <td id="fName"></td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <td id="gender"></td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td id="lName"></td>
+      </tr>
+      <tr>
+        <td>Link:</td>
+        <td id="link"></td>
+      </tr>
+      <tr>
+        <td>Locale:</td>
+        <td id="locale"></td>
+      </tr>
+      <tr>
+        <td>Birthday:</td>
+        <td id="birthday"></td>
+      </tr>
+      <tr>
+        <td>name:</td>
+        <td id="name"></td>
+      </tr>
+      <tr>
+        <td>Username:</td>
+        <td id="username"></td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    var user = {
+    "id": "100005823642721",
+    "first_name": "Duy Thanh",
+    "gender": "male",
+    "last_name": "Trần",
+    "link": "https://www.facebook.com/duythanhcse",
+    "locale": "en_US",
+    "birthday": "20/12/1961",
+    "name": "Duy Thanh Trần",
+    "username": "duythanhcse"
+    }
+
+    document.getElementById("id").innerHTML = user.id;
+    document.getElementById("fName").innerHTML = user.first_name;
+    document.getElementById("gender").innerHTML = user.gender;
+    document.getElementById("lName").innerHTML = user.last_name;
+    document.getElementById("link").innerHTML = user.link;
+    document.getElementById("locale").innerHTML = user.locale;
+    document.getElementById("birthday").innerHTML = user.birthday;
+    document.getElementById("name").innerHTML = user.name;
+    document.getElementById("username").innerHTML = user.username;
+  </script>   
+</body>
+</html>

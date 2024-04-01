@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="popup-wrapper" id="createPopup">
+    <div class="popup-background" (click)="closePopup()"></div>
+    <div class="create-popup" >
+      <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <div class="popup-input">
+          <label for="name">Book Name:</label>
+          <input type="text" id="name" name="name" [(ngModel)]="formData.name">
+        </div>
+        <div class="popup-input">
+          <label for="price">Price:</label>
+          <input type="number" id="price" name="price" [(ngModel)]="formData.price">
+        </div>
+        <div class="popup-input">
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="description" [(ngModel)]="formData.description">
+        </div>
+        <div class="popup-input">
+          <label for="image">Image:</label>
+          <input type="file" id="image" name="image" (change)="onFileChange($event)" required>
+        </div>
+        <div class="popup-input">
+          <label for="quantity">quantity</label>
+          <input type="text" id="quantity" name="quantity" [(ngModel)]="formData.quantity">
+        </div>
+        <div class="popup-input">
+          <label for="maCD">maCD:</label>
+          <input type="text" id="maCD" name="maCD" [(ngModel)]="formData.maCD">
+        </div>
+        <div class="popup-input">
+          <label for="maNXB">MaNXB:</label>
+          <input type="text" id="maNXB" name="maNXB" [(ngModel)]="formData.maNXB">
+        </div>
+        <div class="popup-button">
+          <button type="submit" (click)="popupSubmit()">Add new book</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="popup-wrapper" id="updatePopup">
+    <div class="popup-background" (click)="popupUpdate()"></div>
+    <div class="create-popup" >
+      <form (ngSubmit)="onUpdate()" enctype="multipart/form-data">
+        <div class="popup-input">
+          <label for="name">Book Name:</label>
+          <input type="text" id="name" name="name" [(ngModel)]="formData.name">
+        </div>
+        <div class="popup-input">
+          <label for="price">Price:</label>
+          <input type="number" id="price" name="price" [(ngModel)]="formData.price">
+        </div>
+        <div class="popup-input">
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="description" [(ngModel)]="formData.description">
+        </div>
+        <div class="popup-input">
+          <label for="image">Image:</label>
+          <input type="file" id="image" name="image" (change)="onFileChange($event)" required>
+        </div>
+        <div class="popup-input">
+          <label for="quantity">quantity</label>
+          <input type="text" id="quantity" name="quantity" [(ngModel)]="formData.quantity">
+        </div>
+        <div class="popup-input">
+          <label for="maCD">maCD:</label>
+          <input type="text" id="maCD" name="maCD" [(ngModel)]="formData.maCD">
+        </div>
+        <div class="popup-input">
+          <label for="maNXB">MaNXB:</label>
+          <input type="text" id="maNXB" name="maNXB" [(ngModel)]="formData.maNXB">
+        </div>
+        <div class="popup-button">
+          <button type="submit" (click)="popupUpdate()">Update book</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <h1>QUẢN LÍ THÔNG TIN SÁCH  </h1>
+  <button class="new" (click)="create()">Create New</button>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Tên Sách</th>
+        <th>Giá Bán</th>
+        <th>Mô Tả</th>
+        <th>Anh bìa</th>
+        <th>Ngày Cập Nhật</th>
+        <th>Số Lượng Tồn</th>
+        <th>Mã CD</th>
+        <th>Mã NXB</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of data">
+        <td> {{book.name}} </td>
+        <td> {{book.price}} </td>
+        <td> {{book.description}} </td>
+        <td>
+          <img src="http://localhost:3000/books/image/{{book.image}}" alt="">
+        </td>
+        <td> {{book.date}} </td>
+        <td> {{book.quantity}} </td>
+        <td> {{book.maCD}} </td>
+        <td> {{book.maNXB}} </td>
+        <td>
+          <button (click)="edit(book)">Edit</button>
+          <button (click)="details(book)">Details</button>
+          <button (click)="_delete(book)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,42 @@
+body {
+  margin: 0px;
+  background-color: #CCFFFF;
+}
+.heading {
+  color: red;
+}
+hr {
+  border: solid 1px #7B7B7B;
+}
+.title {
+  font-weight: 700;
+  margin: 10px 0px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.sections2 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  max-width: 300px;
+}
+.sections {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  max-width: 90%;
+}
+.line {
+  margin: 10px 0px;
+}
+#keywords {
+  max-width: 80%;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+button {
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,31 @@
+<h3 class="text-center text-white bg-dark p-3">Public APIs</h3>
+<table class="table table -hover">
+  <thead>
+    <tr>
+      <th colspan="7">Count: {{data.count}} </th>
+    </tr>
+    <tr>
+      <th colspan="7">Entry</th>
+    </tr>
+    <tr >
+      <th>API</th>
+      <th>Description</th>
+      <th>Auth</th>
+      <th>HTTPS</th>
+      <th>Cors</th>
+      <th>Link</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data.entries">
+      <td> {{item.API}} </td>
+      <td> {{item.Description}} </td>
+      <td> {{item.Auth}} </td>
+      <td> {{item.HTTPS}} </td>
+      <td> {{item.Cors}} </td>
+      <td> {{item.Link}} </td>
+      <td> {{item.Category}} </td>
+    </tr>
+  </tbody>
+</table>

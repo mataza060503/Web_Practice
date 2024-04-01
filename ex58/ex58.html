@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0px;
+      background-color: #000080;
+      }
+    .container {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+    }
+    .heading {
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+    }
+    .line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .date {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      width: 300px;
+    }
+    p {
+      color: white;
+      width: 300px;
+    }
+    input, select {
+      height: 20px;
+    }
+    #record, #birth {
+      width: 100px;
+    }
+    #score, #total {
+      width: 50px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    .specify {
+      display: none;
+    }
+    .active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="img_heading">
+      <img src="Logo.gif" alt="">
+    </div>
+    <h1 class="heading">Neonatal Feeding Study</h1>
+    <div class="main">
+      <div class="date">
+        <p>Today is:</p>
+        <input type="text" name="" id="date">
+      </div>
+      <div class="line">
+        <p>1) Name (first, last)</p>
+        <input type="text" name="" id="fname">
+        <input type="text" name="" id="lname">
+      </div>
+      <div class="line">
+        <p>2) Medical Record #:</p>
+        <input type="text" name="" id="record">
+      </div>
+      <div class="line">
+        <p>3) Date of birth:</p>
+        <input type="date" name="" id="birth">
+      </div>
+      <div class="line">
+        <p>4) Physician:</p>
+        <select onchange="other()" name="" id="physician">
+          <option value="1">Dr.Warren Albert</option>
+          <option value="2">Other</option>
+        </select>
+      </div>
+      <div class="line hidden" id="other">
+        <p>If other (specify):</p>
+        <input class="specify" type="text" name="" id="specify">
+      </div>
+      <div class="line">
+        <p>5) 1 Minute APGAR Score: <br> Each score must ve 0,1, or 2</p>
+        <div class="score">
+          <div class="line">
+            <p>Activity</p>
+            <input type="number" name="" id="score" value="0">
+          </div>
+          <div class="line">
+            <p>Pulse</p>
+            <input type="number" name="" id="score" value="0">
+          </div>
+          <div class="line">
+            <p>Frimace (Reflex, Imitability)</p>
+            <input type="number" name="" id="score" value="0">
+          </div>
+          <div class="line">
+            <p>Apperance (Skin Color)</p>
+            <input type="number" name="" id="score" value="0">
+          </div>
+          <div class="line">
+            <p>Respiration</p>
+            <input type="number" name="" id="score" value="0">
+          </div>
+          <div class="line">
+            <p><b>TOTAL</b></p>
+            <input type="number" name="" id="total">
+          </div>
+        </div>
+      </div>
+      <div class="line">
+        <p>6) Birth weight (gms): <br>Weights must be >= 1200gms</p>
+        <input type="number" name="" id="weight" required>
+      </div>
+      <div class="line">
+        <p>7) Parental Consent (required):</p>
+        <input type="checkbox" name="" id="consent">
+      </div>
+      <div class="buttons">
+        <button type="submit" onclick="register()">Register</button>
+        <button onclick="reload()">Reload Page</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    
+    function other() {
+      var select = document.getElementById("physician").value
+      var specifyDiv = document.getElementById("other");
+      
+      console.log(select)
+
+      if (select === "2") {
+        specifyDiv.classList.remove("hidden");
+        document.querySelector(".specify").classList.add("active");
+        specifyInput.setAttribute("required", "true");
+        document.getElementById("specify").focus();
+        
+        
+      } else {
+        specifyDiv.classList.add("hidden");
+        specifyInput.removeAttribute("required");
+        document.querySelector(".specify").classList.remove("active");
+      }
+    }
+    const d = new Date();
+    date = d.getDate() + "/" + (d.getMonth()+1) + "/" + d.getFullYear();
+    document.getElementById("date").value=date
+    
+    document.addEventListener("click", function () {
+      var scores = document.querySelectorAll(`[id^="score"]`);
+      console.log(scores)
+      var i=0;
+      var total=0;
+      scores.forEach(score => {
+        if (score.value >= 0 & score.value <=2) {
+          console.log(score.value)
+          total = total + parseInt(score.value)
+          console.log(total)
+        } else {
+          i++
+        }
+      });
+      document.getElementById("total").value = total
+      if (i != 0) {
+        alert("please re-enter the score within 0-2")
+      }
+      var specify = document.querySelector(".specify.active")
+      console.log(specify)
+        if (specify.value === "") {
+          alert("enter physician's name")
+          document.getElementById("specify").focus();
+      }
+      
+    })
+
+    
+  </script>
+</body>
+</html>

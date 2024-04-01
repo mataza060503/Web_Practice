@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    select {
+      width: 50px;
+      height: 20px;
+    }
+    .input {
+      display: flex;
+      align-items: center;
+    }
+    label {
+      margin-right: 20px;
+    }
+    .container {
+      display:flex;
+      flex-direction:column;
+      gap: 20px;
+    }
+    hr {
+      width: 100%;
+    }
+    p {
+      margin: 0px;
+    }
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    table, th, td {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+    th {
+      background-color: #0000FF;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">Member Registration</h1>
+    <hr>
+    <div class="inputs">
+      <div class="input">
+        <label for="name">Name(*)</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div class="input">
+        <label for="birth">Birthday(*)</label>
+        <p class="text">Day</p>
+        <select name="day" id="day" >
+          <option value=""></option>
+        </select>
+        <p class="text">Month:</p>
+        <select name="month" id="month" onchange="updateDay()">
+          <option value=""></option>
+        </select>
+        <p class="text">Year:</p>
+        <select name="year" id="year" onchange="updateDay()">
+          <option value=""></option>
+        </select>
+      </div>
+      <div class="input">
+        <label for="gender">Gender (*)</label>
+        <input type="radio" name="gender" id="genderMan" value="Man">Man
+        <input type="radio" name="gender" id="genderWoman" value="Woman">Woman
+      </div>
+      <div class="input">
+        <label for="email">Email (*)</label>
+        <input type="email" name="email" id="email">
+      </div>
+    </div>
+    <div>
+      <div class="favorite">
+        <label for="favorite">Your favorite:</label> <br>
+        <input type="checkbox" name="favorite" id="favorite1" value="Shopping">
+        <label for="favorite1">Shopping</label> <br>
+        <input type="checkbox" name="favorite" id="favorite2" value="Tourism">
+        <label for="favorite2">Tourism</label> <br>
+        <input type="checkbox" name="favorite" id="favorite3" value="Chat">
+        <label for="favorite3">Chat</label> <br>
+        <input type="checkbox" name="favorite" id="favorite4" value="Read a book">
+        <label for="favorite4">Read a book</label> <br>
+        <input type="checkbox" name="favorite" id="favorite5" value="Listen to music">
+        <label for="favorite5">Listen to music</label> <br>
+      </div>
+      <div class="favorite_color">
+        <label for="">Your favorite color:</label> <br>
+        <input type="radio" name="color" id="color1" value="Blue">
+        <label for="color1" style="background-color: blue;">Blue</label> <br>
+        <input type="radio" name="color" id="color2" value="Red">
+        <label for="color2" style="background-color: red;">Red</label> <br>
+        <input type="radio" name="color" id="color3" value="Yellow">
+        <label for="color3" style="background-color: yellow;">Yellow</label> <br>
+        <input type="radio" name="color" id="color4" value="Green">
+        <label for="color4" style="background-color: green;">Green</label> <br>
+        <input type="radio" name="color" id="color5" value="Violet">
+        <label for="color5" style="background-color: violet;">Violet</label> <br>
+
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="button" onclick="signUp()">Sign up</button>
+      <button type="reset" onclick="reset()">Reset</button>
+    </div>
+    <table class="signed_table">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Birthday</th>
+        <th>Hobbies</th>
+        <th>Colors</th>
+      </tr>
+      
+    </table>
+  </div>
+  <script>
+    var year = document.getElementById("year");
+    var month = document.getElementById("month");
+    var day = document.getElementById("day");
+    const currentDay = new Date();
+
+    function countDays() {
+      var monthSelected = document.getElementById("month").value;
+      var yearSelected = document.getElementById("year").value;
+      return new Date(yearSelected, monthSelected, 0).getDate(); 
+    }
+
+    for (let i = 0; i < 100; i++) { 
+      var yearOpt = document.createElement("option");
+      yearOpt.value = currentDay.getFullYear() - i;
+      yearOpt.innerHTML = currentDay.getFullYear() - i;
+      year.appendChild(yearOpt);
+      
+    }
+    for (let i = 1; i <= 12; i++) {
+      var monthOpt = document.createElement("option");
+      monthOpt.value = i;
+      monthOpt.innerHTML = i;
+      month.appendChild(monthOpt);
+    }
+    for (let i = 1; i <= 31; i++) {
+          var dayOpt = document.createElement("option");
+          dayOpt.value = i;
+          dayOpt.innerHTML = i;
+          day.appendChild(dayOpt);
+        }
+
+    function signUp() {
+      var name = document.getElementById("name").value;
+      var birth = document.getElementById("day").value + "/" + document.getElementById("month").value + "/" + document.getElementById("year").value;
+      var gender = document.querySelector("input[type='radio'][name='gender']:checked").value;
+      console.log(gender)
+      var email = document.getElementById("email").value;
+      var color = document.querySelector("input[name='color']:checked").value;
+      var hobbieSelected = "";
+      //get selected hobbies
+      var hobbies = document.getElementsByName("favorite");
+      for (let i = 0; i < hobbies.length; i++) {
+        const hobbie = hobbies[i];
+        if (hobbie.checked) {
+          hobbieSelected = hobbieSelected + hobbie.value + ",";
+        }
+      }
+      hobbieSelected = hobbieSelected.substring(0, hobbieSelected.length - 1)
+      console.log(hobbieSelected)
+      
+      var table = document.querySelector(".signed_table");
+      var tr = document.createElement("tr");
+      var td_name = document.createElement("td");
+      var td_email = document.createElement("td");
+      var td_gender = document.createElement("td");
+      var td_birth = document.createElement("td");
+      var td_hobbie = document.createElement("td");
+      var td_color = document.createElement("td");
+      
+      td_name.innerHTML = name;
+      td_email.innerHTML = email;
+      td_gender.innerHTML = gender;
+      td_birth.innerHTML = birth;
+      td_hobbie.innerHTML = hobbieSelected;
+      td_color.innerHTML = color;
+
+      tr.appendChild(td_name);
+      tr.appendChild(td_email);
+      tr.appendChild(td_gender);
+      tr.appendChild(td_birth);
+      tr.appendChild(td_hobbie);
+      tr.appendChild(td_color);
+
+      tr.addEventListener("mouseover", function () {
+        this.style.backgroundColor = "yellow";
+      })
+      tr.addEventListener("mouseleave", function () {
+        this.style.backgroundColor = "white";
+      })
+
+
+      table.appendChild(tr)
+
+      console.log(tr);
+      console.log(table);
+
+      if (name === "") {
+        alert("please enter your name!")
+        document.getElementById("name").focus();
+      }
+      ValidateEmail(document.getElementById("email"));
+    }
+
+    
+
+    function updateDay() {
+      if (document.getElementById("year").value !== "0" && document.getElementById("month").value !== "0" ) {
+        var availableDays = countDays();
+        console.log(availableDays)
+        if (document.querySelectorAll("#day option").length !== "0") {
+          console.log("hello")
+          while (day.firstChild) {
+            day.removeChild(day.lastChild)
+          }
+        }
+        for (let i = 1; i <= availableDays; i++) {
+          var dayOpt = document.createElement("option");
+          dayOpt.value = i;
+          dayOpt.innerHTML = i;
+          day.appendChild(dayOpt);
+        }
+
+      }
+    }
+
+    function reset() {
+      location.reload();
+    }
+
+    window.onload = function() {
+      document.getElementById("name").focus();
+    }
+
+    function ValidateEmail(mail) {
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (mail.value.match(mailformat)) {
+        return true;
+      } else {
+        alert("Your email address is invalid!")
+        document.getElementById("email").focus();
+      }
+    }
+  </script>
+</body>
+</html>

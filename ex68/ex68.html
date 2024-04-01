@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, th, td {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button onclick="run()">Get my CD collection</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Artist</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    function run() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "cd_catalog.xml", true);
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState==4 && xhr.status==200) {
+          var xmlDoc = xhr.responseXML;
+          var dataList = xmlDoc.getElementsByTagName("CD");
+          var tbody = document.getElementsByTagName("tbody")[0];
+          
+          
+          for (let i = 0; i < dataList.length; i++) {
+            const data = dataList[i];
+            var tr = document.createElement("tr");
+            var td_artist = document.createElement("td");
+            var td_title = document.createElement("td");
+            var artist = data.getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue;
+            var title = data.getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+            td_artist.innerHTML = artist;
+            td_title.innerHTML = title;
+            console.log(td_artist)
+            tr.appendChild(td_artist)
+            tr.appendChild(td_title)
+            tbody.appendChild(tr)
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .header, .footer {
+      background-color: #2E74B5;
+      color: white;
+    }
+    table, th, td {
+      border: solid 1px black;
+      border-collapse: collapse;
+    }
+    table {
+      width: 50%;
+    }
+    tr:hover {
+      background-color: yellow;
+    }
+    tr:left {
+      background-color: green;
+    }
+    .header:hover {
+      background-color: #2E74B5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table>
+      <tr class="header">
+        <th>#</th>
+        <th>Student ID</th>
+        <th>Student Name</th>
+      </tr>
+      <tr >
+        <td>1</td>
+        <td>123456</td>
+        <td>Albert Einstein</td>
+      </tr>
+      <tr >
+        <td>2</td>
+        <td>321232</td>
+        <td>Neils Bolr</td>
+      </tr>
+      <tr >
+        <td>3</td>
+        <td>987544</td>
+        <td>Stephen Hawking</td>
+      </tr>
+      <tr >
+        <td>4</td>
+        <td>349687</td>
+        <td>Issac Newton</td>
+      </tr>
+      <tr >
+        <td>5</td>
+        <td>574878</td>
+        <td>Nikola Tesla</td>
+      </tr>
+      <tr>
+        <td class="footer" colspan="3">Designed by John</td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    // Get all the table rows
+    var rows = document.querySelectorAll("tr:not(.footer,.header)");
+
+    // Loop through each row and attach event listeners
+    rows.forEach(function(row) {
+      row.addEventListener("mouseover", function() {
+        this.style.backgroundColor = "yellow";
+      });
+  
+      row.addEventListener("mouseleave", function() {
+      this.style.backgroundColor = "green";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+    }
+    .heading {
+      text-align: center;
+    }
+    table {
+      max-width: 70%;
+      table-layout: fixed;
+    }
+    td {
+      width: 50%;
+    }
+    .background {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    input {
+      height: 20px;
+      width: 50px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">A Simple Color Picker</h1>
+    <table border="1">
+      <tr>
+        <td>
+          <p>Background (enter values from '00' to 'FF')</p>
+          <div class="background">
+            <p>RED</p>
+            <input type="text" name="" id="bgR">
+            <p>GREEN</p>
+            <input type="text" name="" id="bgG">
+            <p>BLUE</p>
+            <input type="text" name="" id="bgB">
+          </div>
+          <p>Text (enter values from '00' to 'FF')</p>
+          <div class="background">
+            <p>RED</p>
+            <input type="text" name="" id="txtR">
+            <p>GREEN</p>
+            <input type="text" name="" id="txtG">
+            <p>BLUE</p>
+            <input type="text" name="" id="txtB">
+          </div>
+          <div class="buttons">
+            <button onclick="apply()">Apply</button>
+            <button type="reset">Reload</button>
+          </div>
+          </div>
+        </td>
+        <td id="output">
+          <h3>HAMLET</h3>
+          <p>
+            Speak to Speach, I pray you, as I pronouced to you, trippingly on the tongue: but if you mouth it, as many of your players do, I had as lief the town-crier spoke my lines.
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script>
+    function apply() {
+      var bgR = document.getElementById("bgR").value;
+      var bgG = document.getElementById("bgG").value;
+      var bgB = document.getElementById("bgB").value;
+      var txtR = document.getElementById("txtR").value;
+      var txtG = document.getElementById("txtG").value;
+      var txtB = document.getElementById("txtB").value;
+      var txtRGB = "rgb(" + txtR + "," + txtG + "," + txtB + ")";
+      var bgRGB = "rgb(" + bgR + "," + bgG + "," + bgB + ")";
+      console.log(txtRGB)
+      document.getElementById("output").style.color = txtRGB
+      document.getElementById("output").style.backgroundColor = bgRGB
+    }
+
+    
+  </script>
+</body>
+</html>

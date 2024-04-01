@@ -1,0 +1,17 @@
+{"products": [
+  {"ProductId":"p1","ProductName":"Coca","Price":100,"Image":"./assets/coke_diet_icon.png"},
+  {"ProductId":"p2","ProductName":"Pepsi","Price":300,"Image":"./assets/pepsi_classic_256_icon.png"},
+  {"ProductId":"p3","ProductName":"Sting","Price":200,"Image":"./assets/7up_icon.png"}
+], 
+"customerCategory": [
+  {"CustomerTypeId":1,"CustomterTypeName":"VIP",
+  "Customers":[
+    {"Id":"Cus123","Name":"Obama","Email":"obama@gmail.com","Age":67,"Image":"./assets/obama.jpg"},
+    {"Id":"Cus456","Name":"Kim jong Un","Email":"unun@gmail.com","Age":38,"Image":"./assets/unun-avatar.jpg"},
+    {"Id":"Cus789","Name":"Putin","Email":"putin@gmail.com","Age":77,"Image":"./assets/putin-avatar.jpg"}]},
+  {"CustomerTypeId":2,"CustomterTypeName":"Normal",
+  "Customers":[
+    {"Id":"Cus000","Name":"Hồ Cẩm Đào","Email":"hodao@gmail.com","Age":16,"Image":"./assets/hodao-avatar.jpg"},
+    {"Id":"Cus111","Name":"Tap Can Binh","Email":"binhbinh@gmail.com","Age":67,"Image":"./assets/binhbinh-avatar.jpg"}]}
+]
+}

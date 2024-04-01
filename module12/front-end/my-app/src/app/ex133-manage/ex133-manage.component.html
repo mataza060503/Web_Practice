@@ -1,0 +1,93 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="popup-wrapper" id="popup">
+      <div class="popup" >
+        <div class="popup-background" (click)="closePopup()"></div>
+        <div class="popup-item" style="width: fit-content;">
+          <div class="table-item-images">
+            
+            <img class="table-item-image" style="width: 200px; height: 300px;" src={{selectedFashion.thumbnail}}  alt="">
+            <label for="image" class="btn table-item-btn" style="width: 100%;">
+              Add Image
+            </label>
+            <input class="popup-input-image" type="file" name="" id="image" [(ngModel)]="selectedFashion.thumbnail" (change)="onFileSelected($event,selectedFashion)">
+          </div>
+          <div class="popup-item-content" style="width: 100%;">
+            
+            <div class="table-item-types" >
+              <div class="table-item-type" style="display: flex;align-items: center;justify-content: center ; margin-right: auto;">
+                <label for="title"><h2 style="margin: 0px; padding-right: 10px;" class="table-item-title">Title:</h2></label>
+                <input class="popup-input-title" type="text" name="" id="title" [(ngModel)]="selectedFashion.fashion_title">
+              </div>
+              
+            </div>
+            <div class="table-item-type" >
+              <h4>Category:</h4>
+              <div class="popup-input-style">
+                <div class="popup-input-style">
+                  <p-dropdown  [options]="fashionStyles" [(ngModel)]="selectedFashion.fashion_style" [showClear]="true" placeholder="Select a Style"></p-dropdown>
+                </div>
+              </div>
+            </div>
+            <div class="table-item-des">
+              <label for="des"><h4>Description:</h4></label> <br>
+              <textarea class="popup-input-des" name="" id="des" [(ngModel)]="selectedFashion.fashion_details"></textarea>
+            </div>
+            <div class="table-item-btns" >
+              <button class="btn table-item-btn" style="margin-top: auto;" (click)="add()">Add new</button>
+              <button class="btn table-item-btn" (click)="update()">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-wrapper" id="popup2">
+      <div class="popup" >
+        <div class="popup-background" (click)="closePopup2()"></div>
+        <div class="popup-item" style="width: fit-content;">
+          <div class="warning">
+            <span style="font-size: 48px; color: #F7C600;" class="material-symbols-outlined">
+              warning
+            </span>
+            <h2>Do you want to Delete this item?</h2>
+            <div class="table-item-btns">
+              <button class="btn table-item-btn" (click)="closePopup2()">Cancel</button>
+              <button class="btn table-item-btn" (click)="Delete()">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="action">
+      <button class="btn table-item-btn action-btn" (click)="New()">Add New Item</button>
+    </div>
+    <div class="table">
+      <div class="table-item" *ngFor="let fashion of fashions">
+        <div class="table-item-images">
+          <img class="table-item-image" style="width: 200px; height: 300px;" src={{fashion.thumbnail}} alt="">
+        </div>
+        <div class="table-item-content">
+          <h2 class="table-item-title"> {{fashion.fashion_title}} </h2>
+          <div class="table-item-types">
+            <div class="table-item-type" style="margin-right: auto;">
+              <h4>Category:</h4>
+              <p> {{fashion.fashion_style}} </p>
+            </div>
+            <div class="table-item-type">
+              <h4>Date update:</h4>
+              <p> {{fashion.creation_date}} </p>
+            </div>
+          </div>
+          <div class="table-item-des">
+            <h4>Description:</h4>
+            <p> {{fashion.fashion_details}} </p>
+          </div>
+          <div class="table-item-btns">
+            <button class="btn table-item-btn" (click)="edit(fashion)">Edit</button>
+            <button class="btn table-item-btn" (click)="openPopup2(fashion)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

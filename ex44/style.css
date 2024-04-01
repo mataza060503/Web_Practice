@@ -1,0 +1,19 @@
+.container {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.floater {
+  float: right;
+  width: fit-content;
+  background-color: #A8A742;
+  padding-right: 20px;
+}
+.footer {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

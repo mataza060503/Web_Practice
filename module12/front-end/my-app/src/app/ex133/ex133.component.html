@@ -1,0 +1,30 @@
+<p-carousel [value]="vintage" [numVisible]="4" [numScroll]="1" [responsiveOptions]="responsiveOptions" [circular]="true" [autoplayInterval]="5000">
+  <ng-template pTemplate="header">
+    <h1 style="text-align: center; margin: 20px 0px;">Vintage Go Straight To Your Head</h1>
+  </ng-template>
+  <ng-template let-vintagItem pTemplate="item">
+      <div class="item" (click)="goDetails(vintagItem._id)">
+          <div class="item-image-container">
+            <img [src]="vintagItem.thumbnail" class="item-image" />
+          </div>
+          <div class="text" >
+            {{vintagItem.fashion_title}}
+          </div>
+      </div>
+  </ng-template>
+</p-carousel>
+<p-carousel [value]="minimalism" [numVisible]="4" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions"  [autoplayInterval]="5000">
+  <ng-template pTemplate="header">
+    <h1 style="text-align: center; margin: 20px 0px;">It's your Minimalism!</h1>
+  </ng-template>
+  <ng-template let-minimalItem pTemplate="item" >
+      <div class="item" (click)="goDetails(minimalItem._id)">
+          <div class="item-image-container">
+            <img [src]="minimalItem.thumbnail" class="item-image" />
+          </div>
+          <div class="text" >
+            {{minimalItem.fashion_title}}
+          </div>
+      </div>
+  </ng-template>
+</p-carousel>

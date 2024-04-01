@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="container">
+    <table border="1">
+      <tr>
+        <td>a:</td>
+        <td>
+          <input type="text" [(ngModel)]="inpA" class={{inpAChecker}} (ngModelChange)="checkTypeA()">
+        </td>
+      </tr>
+      <tr>
+        <td>b:</td>
+        <td>
+          <input type="text" [(ngModel)]="inpB" class={{inpBChecker}} (ngModelChange)="checkTypeB()">
+        </td>
+      </tr>
+      <tr>
+        <td>c:</td>
+        <td>
+          <input type="text" [(ngModel)]="inpC" class={{inpCChecker}} (ngModelChange)="checkTypeC()">
+        </td>
+      </tr>
+      <tr>
+        <td>Result:</td>
+        <td class={{resultChecker}} > {{result}} </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="max([inpA, inpB, inpC])">MAX</button>
+          <button (click)="min([inpA, inpB, inpC])">MIN</button>
+          <button (click)="sin(inpA)">Sin(a)</button>
+          <button (click)="cos(inpA)">Cos(a)</button>
+          <button (click)="power(inpA, inpB)">a^b</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

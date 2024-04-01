@@ -1,0 +1,9 @@
+<div class="input">
+  <label for="name">Input your name</label>
+  <input type="text" id="name" name="name" [(ngModel)]="name">
+</div>
+<div class="result">
+  <p>Your predicted gender: {{ result }}</p>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
+<button (click)="predict()">Predict your gender</button>

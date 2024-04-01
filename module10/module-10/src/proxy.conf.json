@@ -1,0 +1,49 @@
+[
+  {
+    "target": "https://www.dongabank.com.vn",
+    "secure": false,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/products"],
+    "target": "https://fakestoreapi.com",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/v1/bpi/currentprice.json"],
+    "target": "https://api.coindesk.com",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/entries"],
+    "target": "https://api.publicapis.org",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "target": "https://api.genderize.io",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/api/data?drilldowns=Nation&measures=Population"],
+    "target": "https://datausa.io",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/api/breeds/image/random"],
+    "target": "https://dog.ceo",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  }
+]

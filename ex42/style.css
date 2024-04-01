@@ -1,0 +1,55 @@
+.heading {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0px;
+}
+hr {
+  width: 100vw;
+}
+.main_heading, .title {
+  color: #7C6B33;
+  font-family: arial;
+  font-weight: 700;
+}
+.text {
+  color: #8FB291;
+}
+.floater_text, .highlight {
+  color: #7C6B33;
+}
+.floater {
+  width: 30%;
+  float: right;
+  background-color: #FBDDA4;
+  border: solid 2px #9AA97B;
+  padding: 10px;
+}
+.floaterImage {
+  float: right;
+}
+li b {
+  color: black;
+}
+.comments {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+.comment {
+  width: 90%;
+  background-color: #BEBEC1;
+  color: #7C6B33;
+}
+.main ul {
+  list-style: url(images/Apple.jpg);
+}

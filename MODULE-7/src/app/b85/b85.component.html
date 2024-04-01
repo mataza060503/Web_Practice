@@ -1,0 +1,54 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th colspan="2">Chuyển đổi Dương lịch thành Âm lịch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" align="center">
+        <label for="days">Ngày:</label>
+        <select class="form-select" id="days" name="days" [(ngModel)]="inpDay">
+          <option *ngFor="let day of days">{{day}}</option>
+        </select>
+        <label for="days">Tháng:</label>
+        <select class="form-select" id="months" name="months" [(ngModel)]="inpMonth">
+          <option *ngFor="let month of months">{{month}}</option>
+        </select>
+        <label for="days">Năm:</label>
+        <select class="form-select" id="years" name="years" [(ngModel)]="inpYear">
+          <option *ngFor="let year of years">{{year}}</option>
+        </select>
+        <button (click)="convert()">Convert</button>
+      </td>
+    </tr>
+    <tr>
+      <th style="text-align: center;">Âm Lịch</th>
+    </tr>
+    <tr>
+      <table border="1" style="width: 100%;">
+        <tr>
+          <td>Thứ trong tuần</td>
+          <td> {{weekDay}} </td>
+        </tr>
+        <tr>
+          <td>Ngày tháng năm - Âm</td>
+          <td> {{lunarFullDate}} </td>
+        </tr>
+        <tr>
+          <td>Năm</td>
+          <td> {{lunarYear}} </td>
+        </tr>
+        <tr>
+          <td>Tháng</td>
+          <td> {{lunarMonth}} </td>
+        </tr>
+        <tr>
+          <td>Ngày</td>
+          <td> {{lunarDay}} </td>
+        </tr>
+      </table>
+    </tr>
+  </tbody>
+</table>
+
