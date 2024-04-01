@@ -37,6 +37,7 @@ These exercises encompasses fundamental concepts and practical exercises for bui
 
 ![localhost_4200_(ex133_homepage)](https://github.com/mataza060503/Web_Practice/assets/119863432/0c551992-aaa6-45ef-bbe9-4c5b610f12a5)
 ![91702f71f64c5912005d](https://github.com/mataza060503/Web_Practice/assets/119863432/fd8085e4-19fb-4972-b658-49a62060fa8a)
+![28790761d95c76022f4d](https://github.com/mataza060503/Web_Practice/assets/119863432/465ad6f9-2748-4df1-aa0b-ea924b15318e)
 
 ## Features
 
